@@ -9,7 +9,7 @@ class Square:
         """This method initializes the square
         Size is the length of any side
         Size will be a private attribute"""
-        if not isinstance (size, int):
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         self.__size = size
         if size < 0:
