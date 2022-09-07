@@ -5,4 +5,8 @@
 
 class Square:
     """Represent a square."""
-    pass
+    def __init__(self, size=0):
+        """This method initializes the square
+        Size is the length of any side
+        Size will be a private attribute"""
+        self.__size = size
