@@ -16,7 +16,10 @@ def add_integers(a, b=98):
     Returns:
         int: The sum of a and b
     """
-
+    if a is None:
+        raise TypeError("'NoneType' object is not subscriptable")
+    if b is None:
+        raise TypeError("'NoneType' object is not subscriptable")
     if not isinstance(a, int) or not isinstance(a, float):
         raise TypeError("a must be an integer")
     if not isinstance(b, int) or not isinstance(b, float):
