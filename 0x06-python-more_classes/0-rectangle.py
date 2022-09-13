@@ -21,7 +21,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = height
 
-
         """Checking type and validity of width"""
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
