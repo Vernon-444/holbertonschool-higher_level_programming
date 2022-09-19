@@ -2,6 +2,7 @@
 
 
 from os import read
+"""Reads content of file and prints it to stdout"""
 
 
 def read_file(filename=""):
