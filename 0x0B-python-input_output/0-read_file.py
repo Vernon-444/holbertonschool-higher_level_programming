@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-
-
-from os import read
 """Reads content of file and prints it to stdout"""
 
 
