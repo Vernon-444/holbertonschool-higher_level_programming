@@ -5,5 +5,6 @@ import json
 
 
 def from_json_string(my_str):
+    """Compile to obj and return"""
     pyth_obj = json.loads(my_str)
     return pyth_obj
