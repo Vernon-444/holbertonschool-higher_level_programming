@@ -2,6 +2,7 @@
 """Class for Rectangle"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Represent a Rectangle"""
 
@@ -13,14 +14,3 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-
-        @property
-        def width(self):
-            """Get the width of the Rectangle"""
-            return self.__width
-
-        @property
-        def height(self):
-            """Get the height of the Rectangle"""
-            return self.__height
-
