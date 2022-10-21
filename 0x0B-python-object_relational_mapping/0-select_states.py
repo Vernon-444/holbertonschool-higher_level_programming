@@ -1,26 +1,23 @@
 #!/usr/bin/python3
-"""This python script lists all states from the database hbtn_0e_0_usa"""
-
-
+"""Module contains a script that will list all states in a MySQL database"""
 import MySQLdb
+from sys import argv
 
 
-def list_states():
-    """This method lists all the states in the table"""
-    import sys
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                         passwd=sys.argv[2], database=sys.argv[3])
+def select_states():
+    """lists all states from the database hbtn_0e_0_usa"""
 
-    cursor = db.cursor()
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=argv[1], passwd=argv[2], db=argv[3])
 
-    cursor.execute("SELECT * FROM states ORDER BY id")
-    rows = cursor.fetchall()
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
     for row in rows:
         print(row)
-
-    cursor.close()
+    cur.close()
     db.close()
 
 
 if __name__ == "__main__":
-    list_states()
+    select_states()

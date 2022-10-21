@@ -4,8 +4,9 @@ import MySQLdb
 from sys import argv
 
 
-def filter_states():
-    """lists all states with a name starting with N (upper N)"""
+def my_filter_states():
+    """Takes in an argument and displays all values in
+    the states table where name matches the argument"""
 
     db = MySQLdb.connect(host='localhost',
                          port=3306,
@@ -16,8 +17,10 @@ def filter_states():
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states "
-                "WHERE BINARY name LIKE 'N%' "
-                "ORDER BY id")
+                "WHERE BINARY name = '{}' "
+                "ORDER BY id".format(argv[4])
+                )
+
     rows = cur.fetchall()
     for row in rows:
         print(row)
@@ -26,4 +29,4 @@ def filter_states():
 
 
 if __name__ == "__main__":
-    filter_states()
+    my_filter_states()
