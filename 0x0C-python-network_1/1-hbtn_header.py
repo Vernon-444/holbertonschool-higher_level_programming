@@ -4,9 +4,11 @@ a passed in URL"""
 
 
 if __name__ == "__main__":
-    from urllib import request
-    import sys
+    import urllib.request
+    from sys import argv
 
-    req = request.Request(sys.argv[1])
-    with request.urlopen(req) as page:
-        print(page.info()['X-Request-Id'])
+    url = argv[1]
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as response:
+        info = response.info()
+        print(info.get('X-Request-Id'))
