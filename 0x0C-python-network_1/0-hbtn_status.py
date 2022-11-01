@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""This script fetches https://intranet.hbtn.io/status"""
 
-"""Fetches status of Holberton Intranet"""
 
 if __name__ == "__main__":
     from urllib import request
-
+    
     req = request.Request('https://intranet.hbtn.io/status')
     with request.urlopen(req) as page:
         page = page.read()
